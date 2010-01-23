@@ -1,0 +1,25 @@
+JS_REST (For want of a better name).
+
+Problem:
+It can be a right pain to make sure the UI stays in sync with the appication state once JS is more heavily used in your app.
+
+Proposed solution:
+Provide a simple way to create classes in JS that represent the models in your application and provide access to CRUD actions. Additionally provide a means to trigger code to run when your model is updated.
+
+This repo contains a skeleton rails application to demonstrate how the concept works. Big thanks to John Resig for jQuery and the contents of public/javascript/inheritance.js. In this application I use jQuery.listen too. 
+
+I'd love any feedback on how to improve this, so fork away!
+
+This README is sorely lacking, so instead of wibbling away, I'll highlight the important files.
+
+public/javascripts/post.js - Creates a new Post model to use in your code. This file also shows you how to extend the model to include more methods / variables.
+
+public/javascripts/application.js - Contains 'end-user' code. Shows how the user would instantiate a Post, manipulate it and then save / update / destroy.
+
+apps/view/posts/index.html.erb - Contains the JSON structure (at the bottom of the page) that Post populates itself from.
+
+Have a look about, the application should run without tweaking (script/server) assuming you have rails set up. As yet there are no tests to speak of.
+
+Licensed under MIT (see MIT-LICENSE.txt)
+
+Copyright (c) 2010 Andrew Donaldson http://dies-el.co.uk/

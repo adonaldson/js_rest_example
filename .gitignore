@@ -1,0 +1,36 @@
+mkmf.log
+
+# /db
+#/db/schema.rb
+/db/development_structure.sql
+/db/snapshots
+/db/*.sqlite3
+
+# /config/
+/config/database.yml
+
+# /log/
+/log/*
+/log/*.*
+
+# /tmp/
+/tmp/*
+/tmp/*.*
+
+# /vendor/plugins/
+/public/stylesheets/compiled/*
+
+# Asset Manager
+/assetmanager/log/*
+/assetmanager/tmp/*
+
+/coverage
+coverage.data
+
+# VIM swap files
+*.swp
+
+/public/system/uploads/*
+
+# OSX Stuff
+.DS_Store
