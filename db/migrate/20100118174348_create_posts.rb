@@ -7,6 +7,10 @@ class CreatePosts < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    Post.reset_column_information
+
+    Post.create(:title => "Hello, world")
   end
 
   def self.down

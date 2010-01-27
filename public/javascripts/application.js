@@ -8,6 +8,9 @@ function namespace(ns) {
   }
 }
 
+
+// Trying out a new style of event handling, rather than jQuery listen/live c/o Ant
+
 namespace("Helper");
 
 Helper.destroy_post_click = function(source) {
