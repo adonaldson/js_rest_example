@@ -1,0 +1,6 @@
+[submodule "vendor/plugins/js_rest_rails"]
+	path = vendor/plugins/js_rest_rails
+	url = git://github.com/dies-el/js_rest_rails.git
+[submodule "public/javascripts/js_rest"]
+	path = public/javascripts/js_rest
+	url = git://github.com/dies-el/js_rest.git

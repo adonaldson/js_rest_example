@@ -1,3 +1,6 @@
+<%= javascript 'application' %>
+<%= render_js_rest_data 'posts', @posts %>
+
 <div id="index">
   <h1>Listing posts</h1>
 
@@ -29,13 +32,4 @@
   <div style="border: 2px solid cyan; padding: 0 10px; margin-top: 20px;">
     <p>This page is showing <strong id="post_count_using_ajax"><%= render :partial => 'post_count', :locals => { :count => @posts.length } %></strong> (updated with AJAX).</p>
   </div>
-
-  <% content_for :model_data do %>
-    <script>
-      Data = {};
-      Data.post = {
-        <%= render :partial => 'shared/json_item', :collection => @posts %>
-      };
-    </script>
-  <% end -%>
 </div>

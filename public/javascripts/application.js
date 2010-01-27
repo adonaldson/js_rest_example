@@ -1,3 +1,26 @@
+// Namespace function
+function namespace(ns) {
+  ns = ns.split('.');
+  var cur = window, i;
+  while ( i = ns.shift() ) {
+    if ( !cur[i] ) cur[i] = {};
+    cur = cur[i];
+  }
+}
+
+namespace("Helper");
+
+Helper.destroy_post_click = function(source) {
+  var _this = $(source);
+  var id = Model.extract_id(_this.parents('tr:first').attr('id'));
+  var post = new Post();
+  post.find(id);
+
+  if (confirm('Delete post "' + post.data.title + '"?')) {
+    post.destroy();
+  }
+};
+
 $(document).ready(function() {
   if ($("#index").length == 0)
     return;
@@ -15,17 +38,21 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
+  $("table#posts").click(function(e) {
+    var target = $(e.target);
+    
+    if (target.hasClass('destroy_post')) {
+      Helper.destroy_post_click(target);
+    }
+
+    e.preventDefault();
+  });
+
+  
+
   // Listener for destroy post link
   jQuery.listen('click', '.destroy_post', function(e) {
-    var id = Model.extract_id($(this).parents('tr:first').attr('id'));
-    var post = new Post();
-    post.find(id);
 
-    if (confirm('Delete post "' + post.data.title + '"?')) {
-      post.destroy();
-    }
-    
-    e.preventDefault();
   });
 
   // Replaced title text with an editable field, listen for changes

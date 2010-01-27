@@ -6,7 +6,10 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Posts: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
-  <%= javascript_include_tag %w(jquery.js jquery.listen.min.js inheritance.js view.js model.js post.js application.js) %>
+  <%= javascript_include_tag %w(jquery.js jquery.listen.min.js) %>
+  <%= js_rest_javascript_includes %>
+  <%= yield :head %>
+  <%= yield :javascript %>
 </head>
 <body>
 
@@ -14,6 +17,5 @@
 
 <%= yield %>
 
-<%= yield :model_data %>
 </body>
 </html>
