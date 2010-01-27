@@ -10,6 +10,16 @@ This repo contains a skeleton rails application to demonstrate how the concept w
 
 I'd love any feedback on how to improve this, so fork away!
 
+Getting started:
+- git clone git://github.com/dies-el/js_rest_example.git
+- cd js_rest_example
+- git submodule init
+- git submodule update
+- cp config/database.yml.default config/database.yml
+- rake db:migrate
+
+BOOM!
+
 This README is sorely lacking, so instead of wibbling away, I'll highlight the important files.
 
 public/javascripts/post.js - Creates a new Post model to use in your code. This file also shows you how to extend the model to include more methods / variables.
