@@ -28,6 +28,10 @@ public/javascripts/application.js - Contains 'end-user' code. Shows how the user
 
 apps/view/posts/index.html.erb - Contains the JSON structure (at the bottom of the page) that Post populates itself from.
 
+Check your rails defaults (initializers), make sure the following is set:
+
+ActiveRecord::Base.include_root_in_json = false
+
 Have a look about, the application should run without tweaking (script/server) assuming you have rails set up. As yet there are no tests to speak of.
 
 Licensed under MIT (see MIT-LICENSE.txt)
