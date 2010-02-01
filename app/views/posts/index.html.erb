@@ -1,5 +1,5 @@
 <%= javascript 'application' %>
-<%= render_js_rest_data 'posts', @posts %>
+<%= render_js_rest_data 'posts', @posts, :only => [:title, :published, :body] %>
 
 <div id="index">
   <h1>Listing posts</h1>
